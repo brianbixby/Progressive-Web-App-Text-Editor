@@ -1,10 +1,18 @@
-// Import methods to save and get data from the indexedDB database in './database.js'
 import { getDb, putDb } from './database';
-import { header } from './header';
 
 export default class {
   constructor() {
     const localData = localStorage.getItem('content');
+    const header = `
+/*
+       _____  ____________
+      / /   |/_  __/ ____/
+ __  / / /| | / / / __/   
+/ /_/ / ___ |/ / / /___   
+ ____/_/  |_/_/ /_____/   
+just another text editor
+*/                          
+`;
 
     // check if CodeMirror is loaded
     if (typeof CodeMirror === 'undefined') {
